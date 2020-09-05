@@ -1,11 +1,11 @@
 ### PromiseA+规范
-##### 1. 术语
+### 1. 术语
 “promise”是一个对象或函数，其then方法的行为符合此规范。
 “thenable”是定义then方法的对象或函数。
 “value”是任何合法的JavaScript值（包括undefined，一个thenable或一个promise）。
 “exception”是使用该throw语句抛出的值。
 “reason”是一个值，表明承诺被拒绝的原因。
-##### 2. 要求
+### 2. 要求
 #### 2.1 promise状态
 一个Promise必须处在其中之一的状态：pending, fulfilled 或 rejected.
 
@@ -43,7 +43,7 @@ promise.then(onFulfilled, onRejected)
   1. 它必须在promise rejected后调用， 且promise的reason为其第一个参数。
   2. 它不能在promise rejected前调用。
   3. 不能被多次调用。
-  
+
 2.2.4. onFulfilled 和 onRejected 只允许在 执行上下文（execution context） 栈仅包含平台代码时运行. [3.1].
 
 2.2.5. onFulfilled 和 onRejected 必须被当做函数调用 (i.e. 即函数体内的 this 为undefined). [3.2]
