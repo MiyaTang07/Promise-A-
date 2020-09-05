@@ -152,8 +152,8 @@ class Promise {
     this.rejectedCbs = []; // then的rejected callback
     fn(
       (value) => {
-        fulfilledPromise(this, value);
-        //  resolvePromise(this, value)
+        // fulfilledPromise(this, value);
+         resolvePromise(this, value)
       },
       (reason) => {
         rejectedPromise(this, reason);
@@ -163,8 +163,8 @@ class Promise {
   // 两个参数
   then(onFulfilled, onRejected) {
     const promise1 = this;
-    const promise2 = new Promsie(() => {});
-
+    const promise2 = new Promise(() => {});
+                          
     if (promise1.status === statusMap.FULFILLED) {
       if (!isFunction(onFulfilled)) {
         return promise1;
@@ -236,7 +236,7 @@ class Promise {
 
 Promise.deferred = function () {
   const deferred = {};
-  deferred.promsie = new Promise((resolve, reject) => {
+  deferred.promise = new Promise((resolve, reject) => {
     deferred.resolve = resolve;
     deferred.reject = reject;
   });

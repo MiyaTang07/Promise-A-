@@ -1,0 +1,23 @@
+{
+  "name": "promise",
+  "version": "1.0.0",
+  "description": "The specification document goes to promise.aplus.md,thank you!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MiyaTang07/Promise-Aplus.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MiyaTang07/Promise-Aplus/issues"
+  },
+  "homepage": "https://github.com/MiyaTang07/Promise-Aplus#readme",
+  "devDependencies": {
+    "eslint": "^7.8.1"
+  }
+}
