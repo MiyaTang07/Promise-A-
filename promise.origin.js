@@ -147,9 +147,10 @@ class Promise {
     this.fulfilledCbs = []; // then的fulfilled callbacks
     this.rejectedCbs = []; // then的rejected callbacks
     fn(
-      (value) => {
-        fulfilledPromise(this, value);
-        //  resolvePromise(this, value)
+      (value) => {        
+        // [俄罗斯套娃]注意：value是promise对象或者thenable时，仍然需要继续决议
+        // fulfilledPromise(this, value);
+        resolvePromise(this, value)
       },
       (reason) => {
          rejectedPromise(this, reason);
